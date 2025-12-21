@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="https://raw.githubusercontent.com/DecentSamples/DecentSampler-schema/refs/heads/main/DecentSampler.xsd" ?>
+<DecentSampler minVersion="1.15.0">
+  <effects>
+    <effect type="lowpass" frequency="22000.0" resonance="0.7" />
+    <effect type="chorus"  mix="0.0" modDepth="0.2" modRate="0.2" />
+    <effect type="reverb" wetLevel="0.0"/>
+  </effects>
+
+  <ui width="812" height="375" layoutMode="relative"
+      bgMode="top_left">
+    <tab name="main">
+      <!--Amp Envelope-->
+      <labeled-knob x="0" y="75" width="60" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="AMP A" type="float" minValue="0.0" maxValue="4.0" value="0.00" >
+        <binding type="amp" level="instrument" position="0" parameter="ENV_ATTACK" />
+      </labeled-knob>
+      <labeled-knob x="50" y="75" width="60" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="AMP D" type="float" minValue="0.0" maxValue="20.0" value="1" >
+        <binding type="amp" level="instrument" position="0" parameter="ENV_DECAY" />
+      </labeled-knob>
+      <labeled-knob x="100" y="75" width="60" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="AMP S" type="float" minValue="0.0" maxValue="1.0" value="0.0" >
+        <binding type="amp" level="instrument" position="0" parameter="ENV_SUSTAIN" />
+      </labeled-knob>
+      <labeled-knob x="150" y="75" width="60" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="AMP R" type="float" minValue="0.0" maxValue="20.0" value="1" >
+        <binding type="amp" level="instrument" position="0" parameter="ENV_RELEASE" />
+      </labeled-knob>
+
+      <!--Mod Envelope-->
+      <labeled-knob x="0" y="150" width="60" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="MOD A" type="float" minValue="0.0" maxValue="4.0" value="0.00" >
+        <binding type="modulator" level="instrument" position="0" parameter="ENV_ATTACK" />
+      </labeled-knob>
+      <!-- Disabled as duplicate 
+      <labeled-knob x="50" y="150" width="60" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="MOD D" type="float" minValue="0.0" maxValue="20.0" value="1" >
+        <binding type="modulator" level="instrument" position="0" parameter="ENV_DECAY" />
+      </labeled-knob>
+      -->
+      <labeled-knob x="100" y="150" width="60" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="MOD S" type="float" minValue="0.0" maxValue="1.0" value="0.0" >
+        <binding type="modulator" level="instrument" position="0" parameter="ENV_SUSTAIN" />
+      </labeled-knob>
+      <labeled-knob x="150" y="150" width="60" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="MOD R" type="float" minValue="0.0" maxValue="20.0" value="1" >
+        <binding type="modulator" level="instrument" position="0" parameter="ENV_RELEASE" />
+      </labeled-knob>
+
+      <!--"303" Panel-->
+      <labeled-knob x="175" y="0" width="40" textSize="24" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="TUNE" type="float" minValue="-12.0" maxValue="12.0" value="0.00" >
+        <binding type="amp" level="instrument" position="0" parameter="GLOBAL_TUNING" />
+      </labeled-knob>
+      <labeled-knob x="185" y="0" width="120" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="CUT" type="float" minValue="0.0" maxValue="1.0" value="1.0" >
+        <binding type="effect" level="group" tags="all" position="0" parameter="FX_FILTER_FREQUENCY" 
+                    translation="table" 
+                    translationTable="0,33;0.3,150;0.4,450;0.5,1100;0.7,4100;0.9,11000;1.0001,22000"/>
+      </labeled-knob>
+      <labeled-knob x="275" y="0" width="80" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="RES" type="float" minValue="0.0" maxValue="5.0" value="0.1" >
+        <binding type="effect" level="group" tags="all" position="0" parameter="FX_FILTER_RESONANCE" />
+      </labeled-knob>
+      <labeled-knob x="335" y="0" width="80" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="ENV" type="float" minValue="0.0" maxValue="20.0" value="1" >
+        <binding type="modulator" level="instrument" position="0" parameter="MOD_AMOUNT" />
+      </labeled-knob>
+      <labeled-knob x="395" y="0" width="80" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="DECY" type="float" minValue="0.0" maxValue="20.0" value="1" >
+        <binding type="modulator" level="instrument" position="0" parameter="ENV_DECAY" />
+      </labeled-knob>
+      <labeled-knob x="455" y="0" width="80" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="ACNT" type="float" minValue="0.0" maxValue="20.0" value="1" >
+        <binding type="modulator" level="instrument" position="0" parameter="ENV_RELEASE" />
+      </labeled-knob>
+
+      <!-- Chorus Unit -->
+      <labeled-knob x="585" y="75" width="60" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="Chorus" type="float" minValue="0.0" maxValue="1" value="0" >
+        <binding type="effect" level="instrument" position="1" parameter="FX_MIX" />
+      </labeled-knob>
+
+      <!-- Reverb Unit -->
+      <labeled-knob x="725" y="75" width="90" textSize="16" textColor="AA000000" 
+                    trackForegroundColor="CC000000" trackBackgroundColor="66999999" 
+                    label="Reverb" type="percent" minValue="0" maxValue="100" 
+                    value="50">
+        <binding type="effect" level="bus" position="0" 
+                 parameter="FX_REVERB_WET_LEVEL" translation="linear" 
+                 translationOutputMin="0" translationOutputMax="1" />
+      </labeled-knob>
+
+
+
+    </tab>
+  </ui>
+
+
+  <groups attack="0.000" decay="25" sustain="1.0" release="0.430" volume="0dB">
+    <group tags="all,lead" name="Saw Lead" enabled="true" output1Target="BUS_1" output1Volume="1.0">
+      <oscillator waveform="saw" />
+      <effects>
+        <effect type="lowpass" frequency="5000.0" resonance="2.5" />
+      </effects>
+    </group>
+
+    <group name="Lead Sample MG" enabled="false" output1Target="BUS_1" output1Volume="1.0">
+      <sample playbackMode="memory" loopEnabled="false" rootNote="60" path="MBS_02.WAV" />
+    </group>
+
+    <group tags="all,sub" name="Saw Sub" groupTuning="-12" enabled="false" volume="0.7">
+      <oscillator waveform="saw" />
+      <effects>
+        <effect type="lowpass" frequency="5000.0" resonance="2" />
+        <effect type="wave_shaper" drive="1.0" outputLevel="1.0"/>
+      </effects>
+
+    </group>
+    <group tags="all,detune,detuneUp" name="Saw Detune up" groupTuning="0.05" enabled="false" volume="0.7" pan="0.3">
+      <oscillator waveform="saw" />
+      <effects>
+        <effect type="lowpass" frequency="5000.0" resonance="2" />
+        <effect type="wave_shaper" drive="1.0" outputLevel="1.0"/>
+      </effects>
+
+    </group>
+        <group tags="all,detune,detuneDown" name="Saw Detune Down" groupTuning="-0.05" enabled="false" volume="0.7" pan="-0.3">
+      <oscillator waveform="saw" />
+      <effects>
+        <effect type="lowpass" frequency="5000.0" resonance="2" />
+        <effect type="wave_shaper" drive="1.0" outputLevel="1.0"/>
+      </effects>
+
+    </group>
+  </groups>
+
+  <buses>
+    <bus busVolume="1.0" output1Target="MAIN_OUTPUT" output1Volume="1.0">
+      <effects>
+        <effect type="Reverb" wetDryMix="0.5" roomSize="0.5" damping="0.5"/>
+        <effect type="wave_shaper" drive="5.0" outputLevel="1.0"/>
+
+      </effects>
+    </bus>
+  </buses>
+
+  <midi>
+    <!-- This causes MIDI CC 1 to control the 4th knob (cutoff) -->
+    <cc number="1">
+      <binding level="ui" type="control" parameter="VALUE" position="8" 
+               translation="linear" translationOutputMin="1" 
+               translationOutputMax="0" />
+    </cc>
+  </midi>
+</DecentSampler>
