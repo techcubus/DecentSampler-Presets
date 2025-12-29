@@ -8,3 +8,9 @@ I thought I'd test out the new built-in oscillators in DecentSampler and oh boy:
   I suspect this is a bug?
 
 Anyway, I've stalled on this for now. I need to document observations when I'm not half asleep.
+
+### It Would Be Cool If...
+* I could convert the Tobias the 3rd (TB-3) presets in to something similar in the dsbundle
+* The unison spread knob should work
+* Faded pastel ketaminecore UI
+* Achieve balance between simple, few options and flexible many many options
